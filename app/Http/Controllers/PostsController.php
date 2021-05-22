@@ -14,7 +14,13 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        function get_column($post)
+        {
+            return($post->content);
+        }
+
+        $posts = Post::get();
+        return view('posts.index', ['posts' => $posts]);
     }
 
     /**
