@@ -24,16 +24,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -43,7 +33,7 @@ class PostsController extends Controller
     {
         $content = $request->content;
         Post::create( ['content' => $content] );
-        return view('posts.store', ['content'=> $content]);
+        return view('posts.store', ['content' => $content]);
     }
 
     /**
@@ -65,7 +55,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -77,7 +68,11 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->content = $request->content;
+        $post->save();
+
+        return view('posts.update');
     }
 
     /**
