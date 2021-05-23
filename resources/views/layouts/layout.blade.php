@@ -3,7 +3,7 @@
   <head>
       <meta charset="UTF-8">
       <title>投稿アプリ</title>
-      <link rel="stylesheet" type="text/css" href="css/app.css">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
   </head>
   <body>
       @include('headers.header')
