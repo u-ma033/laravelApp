@@ -1,14 +1,21 @@
-@foreach ($posts as $post)
-    <p>{{ $post->content }}</p>
-    <a href='/posts/{{ $post->id }}/edit'>編集</a>
-    <!-- 削除ボタン -->
-    <form action='/posts/{{ $post->id }}' method='post'>
-        @csrf
-        @method('DELETE')
+@extends('layouts.layout')
 
-        <input type='submit' value='削除' onclick='return confirm("削除しますか？")'></input>
-    </form>
-    
-@endforeach
+@section('template')
+    <div class='post-list'>
+        @foreach ($posts as $post)
+            <div class='post'>
+                <span>{{ $post->content }}</span>
+                <div class='buttons'>
+                    <a href='/posts/{{ $post->id }}/edit' class='edit-btn'>編集</a>
+                    <!-- 削除ボタン -->
+                    <form action='/posts/{{ $post->id }}' method='post'>
+                        @csrf
+                        @method('DELETE')
 
-<a href='/posts/create'>新規投稿</a>
+                        <input type='submit' value='削除' class='delete-btn' onclick='return confirm("削除しますか？")'></input>
+                    </form>
+                </div>
+            </div>
+        @endforeach
+    </div>
+@endsection
