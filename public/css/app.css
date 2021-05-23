@@ -1,16 +1,31 @@
+body {
+  margin: 0;
+}
+
 header {
   height: 10vh;
   width: 100vw;
   border-bottom: 1px solid black;
   text-align: right;
+  line-height: 10vh;
+}
+
+.form {
+  width: 50vw;
+  margin: 20px auto;
+}
+
+.content_input {
+  height: 20px;
+  width: 90%;
 }
 
 .new-btn {
-  margin-right: 20px;
+  margin: 0 20px;
 }
 
 .post {
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .buttons {
@@ -31,4 +46,14 @@ header {
 
 .delete-btn {
   color: red;
+}
+
+/* 完了画面のcss */
+.done_text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.done_text {
+  font-size: 25px;
 }
