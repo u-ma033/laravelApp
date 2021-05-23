@@ -22,4 +22,4 @@ Route::get('posts/create', function() {
     return view('posts.create');
 });
 
-Route::resource('posts', 'PostsController', ['only' => ['index', 'store']]);
+Route::resource('posts', 'PostsController', ['only' => ['index', 'store', 'edit', 'update']]);
