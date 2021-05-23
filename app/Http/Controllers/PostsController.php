@@ -83,6 +83,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id)->delete();
+
+        return view('posts.delete');
     }
 }

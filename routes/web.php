@@ -18,8 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('posts/create', function() {
-
     return view('posts.create');
 });
 
-Route::resource('posts', 'PostsController', ['only' => ['index', 'store', 'edit', 'update']]);
+Route::resource('posts', 'PostsController', ['only' => ['index', 'store', 'edit', 'update', 'destroy']]);
